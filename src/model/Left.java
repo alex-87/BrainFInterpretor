@@ -11,8 +11,7 @@ public class Left implements Symbole {
 	}
 
 	public void runSymbole() {
-		if( this.lecteur.pointeur > 0)
-			this.lecteur.pointeur--;
+		this.lecteur.pointeur.refDec();
 	}
 	
 	final Lecteur lecteur;

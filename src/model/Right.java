@@ -12,10 +12,7 @@ public class Right implements Symbole {
 
 	public void runSymbole() {
 
-		if( this.lecteur.memoire.size() <= this.lecteur.pointeur )
-			this.lecteur.memoire.add( 0 );
-
-		this.lecteur.pointeur++;
+		this.lecteur.pointeur.refInc();
 
 	}
 	

@@ -12,10 +12,7 @@ public class Incr implements Symbole {
 
 	public void runSymbole() {
 
-		this.lecteur.memoire.set(
-				this.lecteur.pointeur,
-				this.lecteur.memoire.get(this.lecteur.pointeur) + 1
-			);
+		this.lecteur.pointeur.refInc();
 
 	}
 	
