@@ -11,13 +11,11 @@ public class WhileOut implements Symbole {
 	}
 
 	public void runSymbole() {
-		
-		if( this.lecteur.pointeur.getValue() < 1 ) {
-			this.lecteur.wStack.pop();
-			return;
+		if( this.lecteur.pointeur.getValue() != 0 ) {
+			this.lecteur.sourceCodePtr = this.lecteur.wStack.peek();
 		}
 		
-		this.lecteur.sourceCodePtr = this.lecteur.wStack.peek();
+		this.lecteur.wStack.pop();
 	}
 	
 	public String getExplanation() {

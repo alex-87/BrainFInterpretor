@@ -18,7 +18,7 @@ public class Pointeur {
 	}
 	
 	public void refDec() {
-		if( this.pRef > -1 )
+		//if( this.pRef > -1 )
 			this.pRef--;
 	}
 	
@@ -44,6 +44,7 @@ public class Pointeur {
 	}
 	
 	public int getValue() {
+		if( !kContains(this.pRef) )return 0;
 		return this.memory.get(this.pRef) + 0;
 	}
 	
