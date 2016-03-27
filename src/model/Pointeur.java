@@ -44,7 +44,7 @@ public class Pointeur {
 	}
 	
 	public int getValue() {
-		return this.memory.get(this.pRef);
+		return this.memory.get(this.pRef) + 0;
 	}
 	
 	public int getRef() {

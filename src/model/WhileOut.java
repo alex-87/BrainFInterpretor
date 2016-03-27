@@ -19,7 +19,7 @@ public class WhileOut implements Symbole {
 			return;
 		}
 
-		this.lecteur.sourceCodePtr = this.lecteur.wStack.peek();
+		if( !this.lecteur.wStack.isEmpty() ) this.lecteur.sourceCodePtr = this.lecteur.wStack.peek();
 		this.lecteur.wStack.push( iValue - 1 );
 	}
 	
