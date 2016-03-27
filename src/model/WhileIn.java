@@ -11,8 +11,7 @@ public class WhileIn implements Symbole {
 	}
 
 	public void runSymbole() {
-		this.lecteur.wStack.push( this.lecteur.sourceCodePtr );
-		this.lecteur.wStack.push( this.lecteur.pointeur.getValue() - 1);
+		this.lecteur.wStack.push( this.lecteur.sourceCodePtr);
 	}
 	
 	public String getExplanation() {
