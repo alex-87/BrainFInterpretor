@@ -12,20 +12,26 @@ public class WhileOut implements Symbole {
 
 	public void runSymbole() {
 		
-		this.lecteur.wPhase--;
+		if( this.lecteur.nop ) {
+			this.lecteur.wPhase--;
+		}
+		
 		if( this.lecteur.wPhase == 0 ) {
 			this.lecteur.nop = false;
 		}
-
-		if( this.lecteur.pointeur.getValue() != 0 ) {
-			this.lecteur.sourceCodePtr = this.lecteur.wStack.peek();
-		}
 		
+		if( this.lecteur.nop ) return;
+		
+		if( this.lecteur.pointeur.getValue() != 0 ) {
+			this.lecteur.sourceCodePtr = this.lecteur.wStack.pop();
+			return;
+		} 
+
 		this.lecteur.wStack.pop();
 	}
 	
 	public String getExplanation() {
-		return("while out");
+		return("While out");
 	}
 	
 }

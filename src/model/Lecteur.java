@@ -20,20 +20,25 @@ public class Lecteur {
 	
 	public boolean nop;
 	
-	public Lecteur(InputStream input) {
+	public boolean explanation;
+	
+	public Lecteur(InputStream input, boolean explanation) {
+		
+		this.explanation = explanation;
 		
 		this.pointeur   = new Pointeur();
 		
 		this.wStack     = new Stack<Integer>();
 		
 		this.mapSymbole = new HashMap<Character, Symbole>();
-		this.mapSymbole.put('<', new Left(this)       );
-		this.mapSymbole.put('>', new Right(this)      );
-		this.mapSymbole.put('+', new Incr(this)       );
-		this.mapSymbole.put('-', new Decr(this)       );
-		this.mapSymbole.put('[', new WhileIn(this)    );
-		this.mapSymbole.put(']', new WhileOut(this)   );
-		this.mapSymbole.put('.', new DisplayChar(this));
+		this.mapSymbole.put('<', SymboleFactory.LEFT.factory(this)     );
+		this.mapSymbole.put('>', SymboleFactory.RIGHT.factory(this)    );
+		this.mapSymbole.put('+', SymboleFactory.INC.factory(this)      );
+		this.mapSymbole.put('-', SymboleFactory.DEC.factory(this)      );
+		this.mapSymbole.put('[', SymboleFactory.WHILEIN.factory(this)  );
+		this.mapSymbole.put(']', SymboleFactory.WHILEOUT.factory(this) );
+		this.mapSymbole.put('.', SymboleFactory.PRINT.factory(this)    );
+		this.mapSymbole.put(',', SymboleFactory.INPUT.factory(this)    );
 		
 		this.nop    = false;
 		this.wPhase = 0;
@@ -54,8 +59,8 @@ public class Lecteur {
 	
 	public void interpretor(char entry) {
 		try {
-			//System.out.println( this.mapSymbole.get(entry).getExplanation() );
-			//System.out.println( this.wPhase );
+
+			if( this.explanation ) System.out.println( this.mapSymbole.get(entry).getExplanation() );
 			this.mapSymbole.get(entry).runSymbole();
 			
 		} catch( NullPointerException ne ) {

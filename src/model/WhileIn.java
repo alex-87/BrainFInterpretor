@@ -11,24 +11,26 @@ public class WhileIn implements Symbole {
 	}
 	
 	protected void skip() {
+		this.lecteur.wPhase = 1;
 		this.lecteur.nop = true;
 	}
 
 	public void runSymbole() {
 		
-		this.lecteur.wPhase++;
-		if( this.lecteur.nop )return;
-		
+		if( this.lecteur.nop ) {
+			this.lecteur.wPhase++;
+			return;
+		}
 
 		if( this.lecteur.pointeur.getValue() == 0 ) {
 			this.skip();
 		}
 		
-		this.lecteur.wStack.push( this.lecteur.sourceCodePtr-1 );
+		this.lecteur.wStack.push( this.lecteur.sourceCodePtr - 1 );
 	}
 	
 	public String getExplanation() {
-		return("Into a while");
+		return("While in");
 	}
 	
 }

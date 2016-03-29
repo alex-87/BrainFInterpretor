@@ -43,6 +43,15 @@ public class Pointeur {
 		this.memory.put(this.pRef, this.memory.get(this.pRef) - 1);
 	}
 	
+	public void setValue(int value) {
+		if( !kContains(this.pRef) ) {
+			this.memory.put(this.pRef, value);
+			return;
+		}
+		
+		this.memory.put(this.pRef, value);
+	}
+	
 	public int getValue() {
 		if( !kContains(this.pRef) )return 0;
 		return this.memory.get(this.pRef) + 0;
