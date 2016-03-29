@@ -16,6 +16,10 @@ public class Lecteur {
 	
 	public Stack<Integer> wStack;
 	
+	public int wPhase;
+	
+	public boolean nop;
+	
 	public Lecteur(InputStream input) {
 		
 		this.pointeur   = new Pointeur();
@@ -31,7 +35,10 @@ public class Lecteur {
 		this.mapSymbole.put(']', new WhileOut(this)   );
 		this.mapSymbole.put('.', new DisplayChar(this));
 		
-		sourceCode = new String();
+		this.nop    = false;
+		this.wPhase = 0;
+		
+		this.sourceCode = new String();
 		
 		Scanner u = new Scanner(input);
 		while( u.hasNext() )this.sourceCode+=u.next();
@@ -48,6 +55,7 @@ public class Lecteur {
 	public void interpretor(char entry) {
 		try {
 			//System.out.println( this.mapSymbole.get(entry).getExplanation() );
+			//System.out.println( this.wPhase );
 			this.mapSymbole.get(entry).runSymbole();
 			
 		} catch( NullPointerException ne ) {

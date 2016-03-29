@@ -9,6 +9,7 @@ public class DisplayChar implements Symbole {
 	}
 	
 	public void	runSymbole() {
+		if( this.lecteur.nop )return;
 		System.out.print( (char) (this.lecteur.pointeur.getValue()) );
 	}
 	

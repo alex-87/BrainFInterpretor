@@ -1,4 +1,6 @@
-package model;
+package client;
+
+import model.Lecteur;
 
 public class BF {
 

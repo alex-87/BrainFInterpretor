@@ -11,7 +11,7 @@ public class Right implements Symbole {
 	}
 
 	public void runSymbole() {
-
+		if( this.lecteur.nop )return;
 		this.lecteur.pointeur.refInc();
 
 	}
