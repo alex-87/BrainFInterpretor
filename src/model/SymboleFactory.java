@@ -24,12 +24,12 @@ public enum SymboleFactory {
 	},
 	WHILEIN {
 		Symbole factory(Lecteur lecteur) {
-			return new WhileOut(lecteur);
+			return new WhileIn(lecteur);
 		}
 	},
 	WHILEOUT {
 		Symbole factory(Lecteur lecteur) {
-			return new WhileIn(lecteur);
+			return new WhileOut(lecteur);
 		}
 	},
 	PRINT {
