@@ -15,6 +15,7 @@ public class GetEntry implements Symbole {
 	}
 
 	public void runSymbole() {
+		if( this.lecteur.nop ) return;
 		this.lecteur.pointeur.setValue( (int) reader.next().charAt(0) );
 	}
 	
