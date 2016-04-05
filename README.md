@@ -1,4 +1,4 @@
-# BrainFInterpretor
+# BrainFInterpretor    [![Build Status](https://travis-ci.org/alex-87/BrainFInterpretor.svg?branch=master)](https://travis-ci.org/alex-87/BrainFInterpretor)
 
 This project is a BrainF*ck Interpretor in Java, using Design Patterns.
 
@@ -11,7 +11,7 @@ The language consists of only eight simple commands and an instruction pointer. 
 
 https://en.wikipedia.org/wiki/Brainfuck
 
-[![Build Status](https://travis-ci.org/alex-87/BrainFInterpretor.svg?branch=master)](https://travis-ci.org/alex-87/BrainFInterpretor)
+
 
 BrainFInterpretor in action
 ---------------------------
