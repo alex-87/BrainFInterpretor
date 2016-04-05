@@ -17,3 +17,9 @@ Try it !
 ========
 
 `git clone https://github.com/alex-87/BrainFInterpretor.git . && ant && echo "++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++.>+.+++++++..+++.>++.<<+++++++++++++++.>.+++.------.--------.>+.>." | java -jar ./BF.jar`
+
+References
+==========
+
+- Wikipedia
+- [Fibonacci](https://github.com/unixpickle/brainfuck/blob/master/examples/fib.bf) in BF, from [@unixpickle](https://github.com/unixpickle)
