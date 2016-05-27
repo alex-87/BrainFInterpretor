@@ -22,12 +22,12 @@ public class WhileOut implements Symbole {
 		
 		if( this.lecteur.nop ) return;
 		
-		if( this.lecteur.pointeur.getValue() != 0 ) {
+		if( this.lecteur.pointeur.getValue() != 0 && !this.lecteur.wStack.isEmpty() ) {
 			this.lecteur.sourceCodePtr = this.lecteur.wStack.pop();
 			return;
 		} 
 
-		this.lecteur.wStack.pop();
+		if( !this.lecteur.wStack.isEmpty() )this.lecteur.wStack.pop();
 	}
 	
 	public String getExplanation() {
